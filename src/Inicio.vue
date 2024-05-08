@@ -1,6 +1,6 @@
 <script setup>
 import ListadoAlumnos from './components/ListadoAlumnos.vue';
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted, onBeforeMount } from 'vue'
 
 let id = 1
 
@@ -35,10 +35,23 @@ function aumentar10() {
     cantidad.value = cantidad.value + 10
 }
 
+const h1Element = ref(null)
+
+onBeforeMount(()=>{
+    console.log("app antes de ser montada", cantidad.value)
+    cantidad.value = 10
+})
+
+onMounted(()=>{
+    h1Element.value.textContent = "Bienvenidos a HaB"
+    console.log("app montada",h1Element.value.textContent)
+})
 
 </script>
 
 <template>
+    <h1 ref="h1Element">Bienvenido</h1>
+    <hr />
     <h1>{{ mensaje }}</h1>
     <h1>{{evaluacionDoble}}</h1>
     <h2 :class="claseParImpar">Edad: {{ cantidad }}</h2>
