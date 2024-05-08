@@ -1,5 +1,9 @@
 <script setup>
-import { ref, watch } from 'vue'
+import { onMounted, ref, watch } from 'vue'
+
+const props = defineProps({
+    tareaInicial: Number
+})
 
 const tareaIdSelected = ref(0) 
 const tareaInfo = ref(null)
@@ -14,11 +18,12 @@ async function getTareaInfo() {
     }
 }
 
-useEffect(()=>{
-    getTareaInfo()
-},[tareaIdSelected])
-
 watch(tareaIdSelected,getTareaInfo)
+
+onMounted(()=>{
+    tareaIdSelected.value = props.tareaInicial || 0
+})
+
 </script>
 
 <template>

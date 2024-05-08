@@ -73,7 +73,7 @@ onMounted(()=>{
     <hr />
     <ListadoAlumnos />
     <hr />
-    <ListadoTareas />
+    <ListadoTareas tareaInicial="3"/>
 </template>
 
 <style scoped>
