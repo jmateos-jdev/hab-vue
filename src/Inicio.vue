@@ -1,5 +1,7 @@
 <script setup>
 import ListadoAlumnos from './components/ListadoAlumnos.vue';
+import ListadoTareas from './components/ListadoTareas.vue';
+
 import { ref, computed, onMounted, onBeforeMount } from 'vue'
 
 let id = 1
@@ -70,6 +72,8 @@ onMounted(()=>{
     <input v-model="mensaje" :class="claseInput" type="text" :title="tituloInput" >
     <hr />
     <ListadoAlumnos />
+    <hr />
+    <ListadoTareas />
 </template>
 
 <style scoped>
