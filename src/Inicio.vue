@@ -1,4 +1,5 @@
 <script setup>
+import ListadoAlumnos from './components/ListadoAlumnos.vue';
 import { ref, computed } from 'vue'
 
 let id = 1
@@ -33,13 +34,7 @@ function aumentar10() {
     claseInput.value = "inputCustomBeta"
     cantidad.value = cantidad.value + 10
 }
-function agregarAlumno() {
-    if(newAlumno.value == ''){
-        return
-    }
-    listado.value.push({id: id++, name: newAlumno.value})
-    newAlumno.value = ''
-}
+
 
 </script>
 
@@ -58,13 +53,7 @@ function agregarAlumno() {
     <br />
     <input v-model="mensaje" :class="claseInput" type="text" :title="tituloInput" >
     <hr />
-    <input type="text" v-model="newAlumno" placeholder="Nuevo Alumno" />
-    <button @click="agregarAlumno">Agregar Alumno</button>
-    <ul>
-        <li v-for="alumno in listado" :key="alumno.id">
-        {{ alumno.id }}: {{ alumno.name }}
-        </li>
-    </ul>
+    <ListadoAlumnos />
 </template>
 
 <style scoped>
