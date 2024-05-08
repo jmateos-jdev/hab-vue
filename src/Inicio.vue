@@ -15,6 +15,13 @@ const listado = ref([
     {id: id++, name: 'Alumno 4'}
 ])
 
+const evaluacionDoble = computed(()=>{
+    return listado.value.length + cantidad.value
+})
+
+const claseParImpar = computed(()=>{
+    return cantidad.value%2 == 0 ? `clasePar` : `claseImpar`
+})
 
 
 function aumentar() {
@@ -38,7 +45,8 @@ function agregarAlumno() {
 
 <template>
     <h1>{{ mensaje }}</h1>
-    <h2 :class="cantidad > 10 ? 'colorRed' : 'colorBlue'">Edad: {{ cantidad }}</h2>
+    <h1>{{evaluacionDoble}}</h1>
+    <h2 :class="claseParImpar">Edad: {{ cantidad }}</h2>
 
     <button @click="aumentar">Sumar 1 año</button>
     <button @click="aumentar10">Sumar 10 año</button>
@@ -67,10 +75,10 @@ function agregarAlumno() {
 .inputCustomBeta {
     padding: 10px;
 }
-.colorRed{
+.clasePar{
     color: red
 }
-.colorBlue{
+.claseImpar{
     color: blue;
 }
 </style>
