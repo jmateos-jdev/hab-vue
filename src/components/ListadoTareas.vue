@@ -27,6 +27,7 @@ onMounted(()=>{
 </script>
 
 <template>
+    <h1>{{tareaInicial}}</h1>
     <button @click="tareaIdSelected = 1">Tarea 1</button>
     <button @click="tareaIdSelected = 2">Tarea 2</button>
     <button @click="tareaIdSelected = 3">Tarea 3</button>

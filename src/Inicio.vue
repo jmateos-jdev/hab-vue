@@ -7,6 +7,7 @@ import { ref, computed, onMounted, onBeforeMount } from 'vue'
 let id = 1
 
 const mensaje = ref('Hola Mundo HaB')
+const initialValue = ref(1)
 const cantidad = ref(0)
 const claseInput = ref('inputCustom')
 const tituloInput = ref('titulo de prueba')
@@ -73,7 +74,8 @@ onMounted(()=>{
     <hr />
     <ListadoAlumnos />
     <hr />
-    <ListadoTareas tareaInicial="3"/>
+    <button @click="initialValue = 4">Cambiar initialValue</button>
+    <ListadoTareas :tareaInicial="initialValue"/>
 </template>
 
 <style scoped>
