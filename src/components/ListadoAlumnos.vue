@@ -29,7 +29,6 @@ function agregarAlumno() {
 function quitarAlumno(alumno) {
     listadoAlumnos.value = listadoAlumnos.value.filter((a) => a !== alumno)
 }
-
 </script>
 
 <template>
