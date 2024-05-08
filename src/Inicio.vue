@@ -43,14 +43,17 @@ onBeforeMount(()=>{
 })
 
 onMounted(()=>{
-    h1Element.value.textContent = "Bienvenidos a HaB"
+    setTimeout(()=>{
+        h1Element.value.textContent = "Bienvenidos a HaB"
+    },5000)
+   
     console.log("app montada",h1Element.value.textContent)
 })
 
 </script>
 
 <template>
-    <h1 ref="h1Element">Bienvenido</h1>
+    <h1 ref="h1Element">Cargando Información</h1>
     <hr />
     <h1>{{ mensaje }}</h1>
     <h1>{{evaluacionDoble}}</h1>
