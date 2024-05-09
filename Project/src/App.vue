@@ -4,7 +4,6 @@ import FormConsulta from './components/FormConsulta.vue';
 </script>
 
 <template>
-<FormConsulta />
  
 </template>
 

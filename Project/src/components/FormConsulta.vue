@@ -5,10 +5,14 @@ import CustomInput  from './global/CustomInput.vue';
 
 const textToSearch = ref('')
 
+const emits = defineEmits(['getCharacters'])
+
 const searchCharacter = async () => {
     const resCharacter =
-     await fetch(`https://rickandmortyapi.com/api/character/?name=${textToSearch.value}`) 
-    console.log(await resCharacter.json())
+    await fetch(`https://rickandmortyapi.com/api/character/?name=${textToSearch.value}`) 
+    const data = await resCharacter.json()
+
+    emits('getCharacters', data.results || [])
 }
 
 </script>
