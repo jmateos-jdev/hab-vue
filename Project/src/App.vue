@@ -1,12 +1,8 @@
 <script setup>
-import FormConsulta from './components/FormConsulta.vue';
-
+import { RouterView } from 'vue-router';
 </script>
 
 <template>
- 
+    <RouterView />
 </template>
 
-<style scoped>
-
-</style>

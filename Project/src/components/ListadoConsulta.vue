@@ -17,4 +17,8 @@ defineProps({
 </template>
 
 <style scoped>
+li{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.3rem
+}
 </style>
