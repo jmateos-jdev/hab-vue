@@ -8,9 +8,10 @@ const charactersResults = ref([])
 </script>
 
 <template>
-    <FormConsulta @getCharacters="(chars)=> charactersResults = chars" />
-    <ListadoConsulta :characters="charactersResults" />
+    <FormConsulta @getCharacters="(x)=> charactersResults = x" />
     <hr />
+    <ListadoConsulta :characters="charactersResults" />
+    
 </template>
 
 <style scoped>
