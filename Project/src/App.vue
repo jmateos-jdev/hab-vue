@@ -1,9 +1,11 @@
 <script setup>
-import CustomButton from './components/global/CustomButton.vue'
+import FormConsulta from './components/FormConsulta.vue';
+
 </script>
 
 <template>
- <CustomButton text="Prueb"/>
+<FormConsulta />
+ 
 </template>
 
 <style scoped>
