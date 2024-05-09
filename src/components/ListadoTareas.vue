@@ -1,8 +1,11 @@
 <script setup>
+import BotonEmit from './BotonEmit.vue';
+
 import { onMounted, ref, watch } from 'vue'
 
 const props = defineProps({
-    tareaInicial: Number
+    tareaInicial: Number,
+    textBtn: String
 })
 
 const tareaIdSelected = ref(0) 
@@ -27,6 +30,7 @@ onMounted(()=>{
 </script>
 
 <template>
+    <BotonEmit :text="textBtn" />
     <h1>{{tareaInicial}}</h1>
     <button @click="tareaIdSelected = 1">Tarea 1</button>
     <button @click="tareaIdSelected = 2">Tarea 2</button>

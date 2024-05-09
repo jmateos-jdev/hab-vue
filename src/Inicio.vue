@@ -1,12 +1,12 @@
 <script setup>
 import ListadoAlumnos from './components/ListadoAlumnos.vue';
 import ListadoTareas from './components/ListadoTareas.vue';
+import BotonEmit from './components/BotonEmit.vue'
 
 import { ref, computed, onMounted, onBeforeMount } from 'vue'
 
 let id = 1
 
-const mensaje = ref('Hola Mundo HaB')
 const initialValue = ref(1)
 const cantidad = ref(0)
 const claseInput = ref('inputCustom')
@@ -53,9 +53,22 @@ onMounted(()=>{
     console.log("app montada",h1Element.value.textContent)
 })
 
+const respuesta = ref('Sin respuesta')
+const mensaje = ref('Hola Mundo HaB')
+
+function cambiarMensaje(msg){
+    mensaje.value = msg    
+}
+
 </script>
 
 <template>
+    <BotonEmit text="Boton de Prueba"
+     @response="(msg) => respuesta = msg"
+     :fn="(msg) => cambiarMensaje(msg)"
+     />
+    {{ respuesta }}
+    <hr />
     <h1 ref="h1Element">Cargando Información</h1>
     <hr />
     <h1>{{ mensaje }}</h1>
@@ -75,7 +88,7 @@ onMounted(()=>{
     <ListadoAlumnos />
     <hr />
     <button @click="initialValue = 4">Cambiar initialValue</button>
-    <ListadoTareas :tareaInicial="initialValue"/>
+    <ListadoTareas :tareaInicial="initialValue" textBtn="Texto Botón Nieto"/>
 </template>
 
 <style scoped>
