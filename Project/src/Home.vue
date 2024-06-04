@@ -5,7 +5,7 @@ import { RouterLink } from 'vue-router';
 <template>
     <h1>Bienvenido al Sistema de Vue</h1>
     <nav>
-        <RouterLink to="/buscador">Buscador</RouterLink>
+        <RouterLink to="/buscador">Ir al Buscador</RouterLink>
     </nav>
 </template>
 
